@@ -173,7 +173,7 @@ class DibiDataSource extends DibiObject implements IDataSource
 	/**
 	 * @return DibiResultIterator
 	 */
-	public function getIterator()
+	public function getIterator(): DibiResultIterator
 	{
 		return $this->getResult()->getIterator();
 	}
@@ -300,7 +300,7 @@ class DibiDataSource extends DibiObject implements IDataSource
 	 * Returns the number of rows in a given data source.
 	 * @return int
 	 */
-	public function count()
+	public function count(): int
 	{
 		if ($this->count === NULL) {
 			$this->count = $this->conds || $this->offset || $this->limit

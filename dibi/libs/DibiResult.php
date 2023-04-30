@@ -134,7 +134,7 @@ class DibiResult extends DibiObject implements IDataSource
 	 * Required by the Countable interface.
 	 * @return int
 	 */
-	final public function count()
+	final public function count(): int
 	{
 		return $this->getDriver()->getRowCount();
 	}
@@ -169,7 +169,7 @@ class DibiResult extends DibiObject implements IDataSource
 	 * @param  int  limit
 	 * @return DibiResultIterator
 	 */
-	final public function getIterator($offset = NULL, $limit = NULL)
+	final public function getIterator($offset = NULL, $limit = NULL): DibiResultIterator
 	{
 		return new DibiResultIterator($this, $offset, $limit);
 	}

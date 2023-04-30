@@ -348,7 +348,7 @@ class DibiFluent extends DibiObject implements IDataSource
 	 * @param  int  limit
 	 * @return DibiResultIterator
 	 */
-	public function getIterator($offset = NULL, $limit = NULL)
+	public function getIterator($offset = NULL, $limit = NULL): DibiResultIterator
 	{
 		return $this->connection->query($this->_export(NULL, array('%ofs %lmt', $offset, $limit)))->getIterator();
 	}
@@ -370,7 +370,7 @@ class DibiFluent extends DibiObject implements IDataSource
 	/**
 	 * @return int
 	 */
-	public function count()
+	public function count(): int
 	{
 		return (int) $this->connection->query(
 			'SELECT COUNT(*) FROM (%ex', $this->_export(), ') AS [data]'

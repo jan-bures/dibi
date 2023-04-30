@@ -22,6 +22,7 @@
  */
 class DateTime53 extends DateTime
 {
+	private array $fix;
 
 	public function __sleep()
 	{
@@ -31,7 +32,7 @@ class DateTime53 extends DateTime
 
 
 
-	public function __wakeup()
+	public function __wakeup(): void
 	{
 		$this->__construct($this->fix[0], new DateTimeZone($this->fix[1]));
 		unset($this->fix);
@@ -39,14 +40,14 @@ class DateTime53 extends DateTime
 
 
 
-	public function getTimestamp()
+	public function getTimestamp(): int
 	{
 		return (int) $this->format('U');
 	}
 
 
 
-	public function setTimestamp($timestamp)
+	public function setTimestamp($timestamp): DateTime|DateTime53
 	{
 		return $this->__construct(date('Y-m-d H:i:s', $timestamp), new DateTimeZone($this->getTimezone()->getName())); // getTimeZone() crashes in PHP 5.2.6
 	}

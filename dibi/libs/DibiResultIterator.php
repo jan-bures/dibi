@@ -70,7 +70,7 @@ class DibiResultIterator implements Iterator, Countable
 	 * Rewinds the iterator to the first element.
 	 * @return void
 	 */
-	public function rewind()
+	public function rewind(): void
 	{
 		$this->pointer = 0;
 		$this->result->seek($this->offset);
@@ -81,9 +81,9 @@ class DibiResultIterator implements Iterator, Countable
 
 	/**
 	 * Returns the key of the current element.
-	 * @return mixed
+	 * @return int
 	 */
-	public function key()
+	public function key(): int
 	{
 		return $this->pointer;
 	}
@@ -92,9 +92,9 @@ class DibiResultIterator implements Iterator, Countable
 
 	/**
 	 * Returns the current element.
-	 * @return mixed
+	 * @return int
 	 */
-	public function current()
+	public function current(): int
 	{
 		return $this->row;
 	}
@@ -105,7 +105,7 @@ class DibiResultIterator implements Iterator, Countable
 	 * Moves forward to next element.
 	 * @return void
 	 */
-	public function next()
+	public function next(): void
 	{
 		//$this->result->seek($this->offset + $this->pointer + 1);
 		$this->row = $this->result->fetch();
@@ -118,7 +118,7 @@ class DibiResultIterator implements Iterator, Countable
 	 * Checks if there is a current element after calls to rewind() or next().
 	 * @return bool
 	 */
-	public function valid()
+	public function valid(): bool
 	{
 		return !empty($this->row) && ($this->limit < 0 || $this->pointer < $this->limit);
 	}
@@ -129,7 +129,7 @@ class DibiResultIterator implements Iterator, Countable
 	 * Required by the Countable interface.
 	 * @return int
 	 */
-	public function count()
+	public function count(): int
 	{
 		return $this->result->getRowCount();
 	}
