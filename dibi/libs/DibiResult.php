@@ -169,8 +169,8 @@ class DibiResult extends DibiObject implements IDataSource
 	 * @param  int  limit
 	 * @return DibiResultIterator
 	 */
-	final public function getIterator($offset = NULL, $limit = NULL): DibiResultIterator
-	{
+	final public function getIterator($offset = NULL, $limit = NULL): Traversable
+    {
 		return new DibiResultIterator($this, $offset, $limit);
 	}
 

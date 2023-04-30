@@ -348,7 +348,7 @@ class DibiFluent extends DibiObject implements IDataSource
 	 * @param  int  limit
 	 * @return DibiResultIterator
 	 */
-	public function getIterator($offset = NULL, $limit = NULL): DibiResultIterator
+	public function getIterator($offset = NULL, $limit = NULL): Traversable
 	{
 		return $this->connection->query($this->_export(NULL, array('%ofs %lmt', $offset, $limit)))->getIterator();
 	}

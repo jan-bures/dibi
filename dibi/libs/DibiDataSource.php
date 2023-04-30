@@ -173,7 +173,7 @@ class DibiDataSource extends DibiObject implements IDataSource
 	/**
 	 * @return DibiResultIterator
 	 */
-	public function getIterator(): DibiResultIterator
+	public function getIterator(): Traversable
 	{
 		return $this->getResult()->getIterator();
 	}
