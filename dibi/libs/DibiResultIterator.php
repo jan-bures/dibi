@@ -45,7 +45,7 @@ class DibiResultIterator implements Iterator, Countable
 	/** @var int */
 	private $limit;
 
-	/** @var int */
+	/** @var mixed */
 	private $row;
 
 	/** @var int */
@@ -92,9 +92,9 @@ class DibiResultIterator implements Iterator, Countable
 
 	/**
 	 * Returns the current element.
-	 * @return int
+	 * @return mixed
 	 */
-	public function current(): int
+	public function current(): mixed
 	{
 		return $this->row;
 	}
