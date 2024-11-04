@@ -1,0 +1,20 @@
+{
+    "name": "jan-bures/dibi",
+    "type": "library",
+    "license": "The Dibi License, Version 1",
+    "authors": [
+        {
+            "name": "David Grudl",
+            "email": "david@grudl.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2"
+    },
+    "autoload": {
+        "files": [
+            "dibi/dibi.php"
+        ]
+    },
+    "minimum-stability": "stable"
+}
