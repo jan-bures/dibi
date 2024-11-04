@@ -599,10 +599,10 @@ class DibiConnection extends DibiObject
 
 
 	/**
-	 * @param  IDibiProfiler
+	 * @param  IDibiProfiler|null
 	 * @return DibiConnection  provides a fluent interface
 	 */
-	public function setProfiler(IDibiProfiler $profiler = NULL)
+	public function setProfiler(?IDibiProfiler $profiler = NULL)
 	{
 		$this->profiler = $profiler;
 		return $this;
